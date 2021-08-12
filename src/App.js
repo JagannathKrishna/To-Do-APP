@@ -1,6 +1,6 @@
 import './App.css';
 import {useState} from 'react'
-import { Button } from 'react-bootstrap';
+
 
 
 
@@ -15,10 +15,10 @@ function App() {
       <div className="mainHeading">
         <h1>ToDo List</h1>
       </div>
-      <Button>Test Button</Button>
+     
       <div className="subHeading">
         <br />
-        <h2>W</h2>
+        
       </div>
       <div className="input">
         <input value={toDo} onChange={(e)=>setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
