@@ -6,7 +6,7 @@ function Navbar() {
         <div className="navbar" >
             <div>
                 <div className="mainHeading">
-                    <span className="titletodo"><a href="google.com" className="linktitle">To Do</a></span>
+                    <span className="titletodo"><a href="/" className="linktitle">To Do</a></span>
                 </div>
      
                 <div className="subHeading">
