@@ -5,12 +5,22 @@ import {useState} from 'react'
 function Body() {
     const [toDos,setToDos] = useState([])
   const [toDo,setToDo] = useState('')
+  const handleKeyPress = (event) => {
+    if(event.key === 'Enter'){
+      setToDos([...toDos,{id:Date.now() ,text: toDo, status: false}])
+      setToDo("");
+    }
+}
+  
+
   const deleteTodo = idToDelete => setToDos(currentTodos => currentTodos.filter(toDo => toDo.id !== idToDelete))
     return (
         <div className="bodyoftodo"> 
-            <div className="input">
-        <input value={toDo} onChange={(e)=>setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
-        <i onClick={()=>setToDos([...toDos,{id:Date.now() ,text: toDo, status: false}])} className="fas fa-plus"></i>
+          <div className="input">
+         
+        <input value={toDo} onChange={(e)=>setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." onKeyPress={handleKeyPress} />
+        <i onClick={()=>setToDos([...toDos,{id:Date.now() ,text: toDo, status: false}])} className="fas fa-plus" ></i>
+    
       </div>
       <div className="todos">
         {toDos.map((obj)=>{
