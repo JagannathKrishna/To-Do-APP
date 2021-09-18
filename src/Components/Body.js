@@ -11,7 +11,10 @@ function Body() {
       setToDo("");
     }
 }
-  
+  const addTask = ()=>{
+    setToDos([...toDos,{id:Date.now() ,text: toDo, status: false}])
+      setToDo("");
+  }
 
   const deleteTodo = idToDelete => setToDos(currentTodos => currentTodos.filter(toDo => toDo.id !== idToDelete))
     return (
@@ -19,7 +22,7 @@ function Body() {
           <div className="input">
          
         <input value={toDo} onChange={(e)=>setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." onKeyPress={handleKeyPress} />
-        <i onClick={()=>setToDos([...toDos,{id:Date.now() ,text: toDo, status: false}])} className="fas fa-plus" ></i>
+        <i onClick={addTask} className="fas fa-plus" ></i>
     
       </div>
       <div className="todos">
